@@ -2,10 +2,10 @@ package scripts.fc.missions.fcdoricsquest.tasks;
 
 import org.tribot.api.Timing;
 import org.tribot.api2007.Banking;
-import org.tribot.api2007.WebWalking;
 
 import scripts.fc.api.banking.FCBanking;
 import scripts.fc.api.generic.FCConditions;
+import scripts.fc.api.travel.Travel;
 import scripts.fc.framework.task.Task;
 import scripts.fc.missions.fcdoricsquest.FCDoricsQuest;
 import scripts.fc.missions.fcdoricsquest.data.DoricSettings;
@@ -40,7 +40,7 @@ public class GrabMaterials extends Task
 					Timing.waitCondition(FCConditions.BANK_LOADED_CONDITION, 4500);
 			}
 			else
-				WebWalking.walkToBank();
+				Travel.walkToBank();
 		}
 		
 		return false;

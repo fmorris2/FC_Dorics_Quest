@@ -3,10 +3,10 @@ package scripts.fc.missions.fcdoricsquest.tasks;
 import org.tribot.api.General;
 import org.tribot.api.interfaces.Positionable;
 import org.tribot.api2007.Player;
-import org.tribot.api2007.WebWalking;
 import org.tribot.api2007.types.RSTile;
 
 import scripts.fc.api.interaction.impl.npcs.dialogue.NpcDialogue;
+import scripts.fc.api.travel.Travel;
 import scripts.fc.framework.task.Task;
 import scripts.fc.missions.fcdoricsquest.data.DoricSettings;
 
@@ -21,7 +21,7 @@ public class DoricDialogue extends Task
 	public boolean execute()
 	{
 		if(Player.getPosition().distanceTo(DORIC_TILE) > DISTANCE_THRESHOLD)
-			WebWalking.walkTo(DORIC_TILE);
+			Travel.webWalkTo(DORIC_TILE);
 		else
 			if(new NpcDialogue("Talk-to", "Doric", 10, 0, 0, 1).execute())
 				General.sleep(600, 1800);
