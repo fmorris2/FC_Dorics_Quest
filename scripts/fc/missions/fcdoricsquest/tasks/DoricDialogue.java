@@ -6,11 +6,14 @@ import org.tribot.api2007.Player;
 import org.tribot.api2007.types.RSTile;
 
 import scripts.fc.api.interaction.impl.npcs.dialogue.NpcDialogue;
+import scripts.fc.api.items.FCItem;
+import scripts.fc.api.skills.mining.data.RockType;
 import scripts.fc.api.travel.Travel;
+import scripts.fc.framework.task.ItemsRequiredTask;
 import scripts.fc.framework.task.Task;
 import scripts.fc.missions.fcdoricsquest.data.DoricSettings;
 
-public class DoricDialogue extends Task
+public class DoricDialogue extends Task implements ItemsRequiredTask
 {
 	private static final long serialVersionUID = -2799862046107080194L;
 	
@@ -39,6 +42,17 @@ public class DoricDialogue extends Task
 	public String getStatus()
 	{
 		return "Doric dialogue";
+	}
+
+	@Override
+	public FCItem[] getRequiredItems()
+	{
+		return new FCItem[]
+		{
+			new FCItem(6, false, RockType.CLAY.getItemId()),
+			new FCItem(4, false, RockType.COPPER.getItemId()),
+			new FCItem(2, false, RockType.IRON.getItemId())
+		};
 	}
 
 }

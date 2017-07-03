@@ -14,6 +14,7 @@ import scripts.fc.framework.goal.impl.SkillGoal;
 import scripts.fc.framework.mission.Mission;
 import scripts.fc.framework.requirement.item.ItemRequirement;
 import scripts.fc.framework.requirement.item.ReqItem;
+import scripts.fc.framework.requirement.item.SingleReqItem;
 import scripts.fc.framework.script.FCMissionScript;
 import scripts.fc.missions.fcmining.FCMining;
 
@@ -32,13 +33,13 @@ public class DoricsQuestRequirement extends ItemRequirement
 		
 		return new ReqItem[]
 		{
-			new ReqItem(RockType.CLAY.getItemId(), 6, 
+			new SingleReqItem(RockType.CLAY.getItemId(), 6, true, true,
 					new FCMining(script, true, true, hopSettings, RockType.CLAY, GatheringMode.BANK, null, ProgressionType.EXPERIENCE, new ResourceGoal(6, RockType.CLAY.getItemId()))), 
 			
-			new ReqItem(RockType.COPPER.getItemId(), 4, 
+			new SingleReqItem(RockType.COPPER.getItemId(), 4, true, true,
 					new FCMining(script, true, true, hopSettings, RockType.COPPER, GatheringMode.BANK, null, ProgressionType.EXPERIENCE, new ResourceGoal(4, RockType.COPPER.getItemId()))), 
 			
-			new ReqItem(RockType.IRON.getItemId(), 2,
+			new SingleReqItem(RockType.IRON.getItemId(), 2, true, true,
 					new FCMining(script, true, true, hopSettings, RockType.IRON, GatheringMode.BANK, null, ProgressionType.EXPERIENCE, new ResourceGoal(2, RockType.IRON.getItemId())),
 					new FCMining(script, true, true, hopSettings, null, GatheringMode.BANK, new RimmingtonMine(), ProgressionType.EXPERIENCE, new SkillGoal(SKILLS.MINING, 15)))
 		};
