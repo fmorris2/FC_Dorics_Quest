@@ -35,7 +35,7 @@ public class DoricDialogue extends Task implements ItemsRequiredTask
 	@Override
 	public boolean shouldExecute()
 	{
-		return DoricSettings.FINISH_QUEST.isValid() || DoricSettings.START_QUEST.isValid();
+		return true;
 	}
 
 	@Override
