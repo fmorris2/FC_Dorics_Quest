@@ -11,7 +11,6 @@ import scripts.fc.api.skills.mining.data.RockType;
 import scripts.fc.api.travel.Travel;
 import scripts.fc.framework.task.ItemsRequiredTask;
 import scripts.fc.framework.task.Task;
-import scripts.fc.missions.fcdoricsquest.data.DoricSettings;
 
 public class DoricDialogue extends Task implements ItemsRequiredTask
 {
