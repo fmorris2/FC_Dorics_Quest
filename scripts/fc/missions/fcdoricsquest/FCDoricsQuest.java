@@ -73,4 +73,10 @@ public class FCDoricsQuest extends QuestScriptManager
 	{
 	}
 
+	@Override
+	public boolean canStart()
+	{
+		return true;
+	}
+
 }
