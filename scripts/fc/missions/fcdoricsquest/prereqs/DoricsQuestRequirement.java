@@ -1,7 +1,5 @@
 package scripts.fc.missions.fcdoricsquest.prereqs;
 
-import java.util.List;
-
 import org.tribot.api2007.Skills.SKILLS;
 
 import scripts.fc.api.skills.GatheringMode;
@@ -11,7 +9,6 @@ import scripts.fc.api.skills.mining.data.locations.impl.RimmingtonMine;
 import scripts.fc.framework.WorldHopSettings;
 import scripts.fc.framework.goal.impl.ResourceGoal;
 import scripts.fc.framework.goal.impl.SkillGoal;
-import scripts.fc.framework.mission.Mission;
 import scripts.fc.framework.requirement.item.ItemRequirement;
 import scripts.fc.framework.requirement.item.ReqItem;
 import scripts.fc.framework.requirement.item.SingleReqItem;
@@ -44,11 +41,4 @@ public class DoricsQuestRequirement extends ItemRequirement
 					new FCMining(script, true, true, hopSettings, null, GatheringMode.BANK, new RimmingtonMine(), ProgressionType.EXPERIENCE, new SkillGoal(SKILLS.MINING, 15)))
 		};
 	}
-
-	@Override
-	public List<Mission> getReqMissions()
-	{
-		return null;
-	}
-
 }
